@@ -1,8 +1,8 @@
 import random
 import math
 
-x_position = random.randint(1, 10)
-y_position = random.randint(1, 10)
+x_position = random.randint(1, 11)
+y_position = random.randint(1, 11)
 attempts = 0
 print("Welcome to Kirkland brand battleships.")
 guess_x = int(input("Enter a position for the X axis: "))
