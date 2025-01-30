@@ -19,3 +19,5 @@ while attempts != 9:
         print("Hit!")
 
 print("The coordinates were: ", "(" + str(x_position) + " , " + str(y_position) + ")")
+if x_position != guess_x or y_position != guess_y:
+    print("The ship got away.")
