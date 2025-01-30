@@ -4,6 +4,7 @@ import math
 x_position = random.randint(1, 10)
 y_position = random.randint(1, 10)
 attempts = 0
+print("Welcome to Kirkland brand battleships.")
 guess_x = int(input("Enter a position for the X axis: "))
 guess_y = int(input("Enter a position for the Y axis: "))
 
