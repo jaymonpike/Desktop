@@ -1,32 +1,47 @@
-baseline = 0
+import re
+def remove_symbol(word):
+    return re.sub(r'[^a-zA-Z]', '', word)
+def isVowel(word):
+    first_letter = word[0].lower()
+    return first_letter in "aeiou"
+def FirstVowelPos(word):
+    for i, letter in enumerate(word):
+        if isVowel(letter):
+            return i
+    return -1
+def GetPigLatin(word):
+    vowel_pos = FirstVowelPos(word)
+    if vowel_pos == 0:
+        return word + "yay"
+    else:
+        return word[vowel_pos::] + word[0:vowel_pos] + "ay"
+def GetPigSentence(word):
+    words = word.split()
+    multiple_words = []
+    vowels_pos = FirstVowelPos(word)
+    for word in words:
+        if vowels_pos == 0:
+            return multiple_words.append(str(word + "ay"))
+        else:
+            return multiple_words.append(str(word[vowels_pos::] + word[0:vowels_pos] + "ay"))
 
-print("Does your password contain...")
-nine_char = input("at least 9 characters in length? y/n")
-if nine_char == 'y' or nine_char == 'Y':
-    baseline += 1
-elif nine_char == 'n' or nine_char == 'N':
-    baseline += 0
-mix_let_numb = input("a mixture of letters and numbers? y/n")
-if mix_let_numb == 'y' or mix_let_numb == 'Y':
-    baseline += 1
-elif mix_let_numb == 'n' or mix_let_numb == 'N':
-    baseline += 0
-mix_up_low = input("a mixture of uppercase and lowercase letters? y/n")
-if mix_up_low == 'y' or mix_up_low == 'Y':
-    baseline += 1
-elif mix_up_low == 'n' or mix_up_low == 'N':
-    baseline += 0
-symbol = input("at least one symbol? y/n")
-if symbol == 'y' or symbol == 'Y':
-    baseline += 1
-elif symbol == 'n' or symbol == 'N':
-    baseline += 0
+    return ' '.join(multiple_words)
 
-if baseline <=1:
-    print("Your password is very weak.")
-elif baseline == 2:
-    print("Your password is weak.")
-elif baseline == 3:
-    print("Your password is strong")
-elif baseline == 4:
-    print("Your password is very strong.")
+start = input("Enter j to continue to translator, enter q to quit: ")
+while start !='q':
+    if start =='j':
+        word = input("Enter a word, or enter q to quit: ")
+        if word != 'q':
+            # word = input("Enter a word: ")
+            print("Your word in Pig Latin is:", GetPigLatin(remove_symbol(word)))
+        if word =='q':
+            break
+    if start == 't':
+        words = input("Enter a sentence: ")
+        print("Your sentence in Piglatin is:\n" + GetPigSentence(remove_symbol(words)))
+
+    else:
+        print("Invalid entry.")
+        start = input("Enter j to continue to translator, enter q to quit")
+
+print("Thank you for using translator!")

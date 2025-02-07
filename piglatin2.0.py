@@ -16,14 +16,13 @@ def GetPigLatin(word):
     else:
         return word[vowel_pos::] + word[0:vowel_pos] + "ay"
 
-start = input("Enter j to continue to translator, enter q to quit: ")
-while start !='q':
-    if start =='j':
+start = input("Enter c to continue to Pig Latin translator, enter q to quit: ")
+while start.lower() !='q':
+    if start.lower() =='c':
         word = input("Enter a word, or enter q to quit: ")
-        if word != 'q':
-            # word = input("Enter a word: ")
+        if word.lower() != 'q':
             print("Your word in Pig Latin is:", GetPigLatin(remove_symbol(word)))
-        if word =='q':
+        if word.lower() =='q':
             break
 
 
