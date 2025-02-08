@@ -15,8 +15,8 @@ def GetPigLatin(word):
         return word + "yay"
     else:
         return word[vowel_pos::] + word[0:vowel_pos] + "ay"
-def GetPigSentence(word):
-    words = word.split()
+def GetPigSentence(sent):
+    words = sent.split()
     multiple_words = []
     vowels_pos = FirstVowelPos(word)
     for word in words:
@@ -45,3 +45,18 @@ while start !='q':
         start = input("Enter j to continue to translator, enter q to quit")
 
 print("Thank you for using translator!")
+
+
+
+
+# You need to modify your program to handle full sentences. You need to:
+# * Split the sentence into words using .split().
+# * Translate each word individually into Pig Latin.
+# * Reconstruct the sentence by joining the words back together.
+
+# Steps
+# * Modify the input prompt to accept full sentences.
+# * Use .split() to break the sentence into words.
+# * Use a loop to process each word with your GetPigLatin() function.
+# * Use ' '.join(list_of_translated_words) to reassemble the sentence.
+# * Output the final Pig Latin sentence.

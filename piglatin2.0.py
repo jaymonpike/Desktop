@@ -28,6 +28,6 @@ while start.lower() !='q':
 
     else:
         print("Invalid entry.")
-        start = input("Enter j to continue to translator, enter q to quit")
+        start = input("Enter c to continue to translator, enter q to quit")
 
 print("Thank you for using translator!")
