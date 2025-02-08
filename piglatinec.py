@@ -33,16 +33,16 @@ while start.lower() !='q':
         word = input("Enter a word, enter s for sentence mode, or enter q to quit:\n")
         if word.lower() == 's':
             sentence = input("Enter a sentence:\n")
-            get_sentence = getpigsent(sentence)
+            get_sentence = getpigsent(sentence.lower())
             print("Your sentence in Pig Latin is:\n" + get_sentence + "\n ")
         elif word.lower() != 'q':
-            print("Your word in Pig Latin is:", GetPigLatin(remove_symbol(word)))
+            print("Your word in Pig Latin is:", GetPigLatin(remove_symbol(word.lower())) + '\n')
         elif word.lower() =='q':
             break
 
 
     else:
-        print("Invalid entry.")
-        start = input("Enter c to continue to translator, enter q to quit")
+        print("Invalid entry.\n")
+        start = input("Enter c to continue to translator, enter q to quit: ")
 
 print("Thank you for using translator!")
