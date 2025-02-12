@@ -1,7 +1,7 @@
 play = 0
-while play != 'q':
-    play = input("Enter c to use bowling calculator, or enter q to quit: ").lower()
-    if play == 'c':
+while play != '2':
+    play = input("Enter 1 to use bowling calculator, or enter 2 to quit: ")
+    if play == '1':
         def GetScore(rolls):
             score = 0
             index_frame = 0
@@ -27,10 +27,10 @@ while play != 'q':
         user_score = input("Enter your scores for each throw separated by commas: ").split(",")
         int_user_score = [int(x) for x in user_score]
         print(" Your total score is : ", GetScore(int_user_score))
-    elif play == 'q':
+    elif play == '2':
         break
     else:
         print("Invalid entry")
-        play = input("Enter c to use bowling calculator, or enter q to quit: ").lower()
+        play = input("Enter 1 to use bowling calculator, or enter 2 to quit: ").lower()
 
 print("Have a nice day!")
